@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/new/icon">
+        <file>close.png</file>
+        <file>folder.png</file>
+        <file>message.png</file>
+        <file>drop_down.png</file>
+        <file>upload.png</file>
+        <file>acount.png</file>
+        <file>passwd.png</file>
+        <file>user.png</file>
+        <file>hospital.png</file>
+        <file>login.png</file>
+        <file>choose.png</file>
+        <file>haschoose.png</file>
+        <file>ok.png</file>
+    </qresource>
+</RCC>
