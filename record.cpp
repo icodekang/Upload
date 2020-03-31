@@ -10,7 +10,7 @@ Record::Record(QWidget *parent) :
     ui->recordTableWidget->setColumnWidth(0, 30);
     ui->recordTableWidget->setColumnWidth(1, 360);
     ui->recordTableWidget->setColumnWidth(2, 160);
-    ui->recordTableWidget->setColumnWidth(3, 150);
+    ui->recordTableWidget->setColumnWidth(3, 140);
     ui->recordTableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->recordTableWidget->verticalHeader()->setHidden(true);
     ui->recordTableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);

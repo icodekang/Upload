@@ -51,15 +51,6 @@ background-color: rgb(250, 250, 250);</string>
          <property name="text">
           <string>账号设置</string>
          </property>
-         <property name="font">
-          <font>
-           <family>Adobe Devanagari</family>
-           <pointsize>9</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-           <stylestrategy>PreferDefault</stylestrategy>
-          </font>
-         </property>
          <property name="textAlignment">
           <set>AlignLeading|AlignVCenter</set>
          </property>
@@ -71,14 +62,6 @@ background-color: rgb(250, 250, 250);</string>
         <item>
          <property name="text">
           <string>上传设置</string>
-         </property>
-         <property name="font">
-          <font>
-           <family>Adobe Devanagari</family>
-           <pointsize>9</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
          </property>
          <property name="icon">
           <iconset resource="images/images.qrc">

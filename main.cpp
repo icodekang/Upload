@@ -4,6 +4,7 @@
 #include <QTextCodec>
 #include <QMessageBox>
 #include <QFile>
+#include <QFont>
 #include <QSystemSemaphore>
 #include <QSharedMemory>
 #include "qlog.h"
@@ -14,6 +15,11 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
+
+    QFont font = a.font();
+    font.setPointSize(9);
+    font.setFamily("宋体");
+    a.setFont(font);
 
     QSystemSemaphore sema("UPLOAD", 1, QSystemSemaphore::Open);
     sema.acquire();
