@@ -91,7 +91,11 @@ bool SqliteData::dbInit()
         query.prepare("insert into seting values(?,?,?,?,?)");
         query.bindValue(0, 0);
         query.bindValue(1, 5);
+#ifdef Q_OS_LINUX
+        query.bindValue(2, "/tmp/uploadCloud");
+#elif
         query.bindValue(2, "C:/uploadCloud");
+#endif
         query.bindValue(3, Tool::getCurTime());
         query.bindValue(4, Tool::getCurTime());
         success = query.exec();

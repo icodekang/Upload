@@ -164,6 +164,7 @@ void Login::on_loginBtn_clicked()
         }
         QMessageBox::information(this, tr("提示"), tr("登录成功"), QMessageBox::Yes);
         qInfo() << "login success";
+
         QDialog::accept();
     });
 }

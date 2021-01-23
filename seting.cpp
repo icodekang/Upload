@@ -20,14 +20,26 @@ QString Seting::getPath()
 Seting* Seting::getSeting()
 {
     Seting *seting = nullptr;
+#ifdef Q_OS_LINUX
+    seting = new Seting(5, QObject::tr("/tmp/uploadCloud"));
+#elif
+    seting = new Seting(5, QObject::tr("C:\\uploadCloud"));
+#endif
     QSqlQuery query(SqliteData::getDb());
     if(query.exec("select * from seting where id = 0"))
     {
         if(query.first())
         {
-            seting = new Seting(5, QObject::tr("C:\\uploadCloud"));
-            seting->times   = query.value(1).toInt();
-            seting->path    = query.value(2).toString();
+            int times = query.value(1).toInt();
+            if(times > 0)
+            {
+                seting->times = query.value(1).toInt();
+            }
+            QString path = query.value(2).toString();
+            if (!path.isEmpty())
+            {
+                seting->path = query.value(2).toString();
+            }
         }
     }
     return seting;

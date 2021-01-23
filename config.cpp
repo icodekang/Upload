@@ -3,9 +3,13 @@
 //QString Config::loginUrl     = "http://wq.cloudgj.com.cn/api/index/login";
 //QString Config::modifyPwdUrl = "http://wq.cloudgj.com.cn/api/index/uppwd";
 //QString Config::uploadUrl    = "http://wq.cloudgj.com.cn/api/index/arr";
-QString Config::loginUrl     = "192.168.1.100/api/index/login";
-QString Config::modifyPwdUrl = "192.168.1.100/api/index/uppwd";
-QString Config::uploadUrl    = "192.168.1.100/api/index/arr";
+//QString Config::loginUrl     = "192.168.1.100/api/index/login";
+//QString Config::modifyPwdUrl = "192.168.1.100/api/index/uppwd";
+//QString Config::uploadUrl    = "192.168.1.100/api/index/arr";
+
+QString Config::loginUrl     = "http://tp5-2020.test.lishuiyuan.cn/api/upload/login";
+QString Config::modifyPwdUrl = "http://tp5-2020.test.lishuiyuan.cn/api/upload/uppwd";
+QString Config::uploadUrl    = "http://tp5-2020.test.lishuiyuan.cn/api/upload/arr";
 
 QString Config::dbHostName = "localhost";
 QString Config::dbName     = "upload.db";

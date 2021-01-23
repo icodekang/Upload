@@ -83,7 +83,10 @@ MainWindow::~MainWindow()
     {
         ut->quit();
     }
-    delete ui;
+    if (ui)
+    {
+        delete ui;
+    }
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)

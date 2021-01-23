@@ -1,5 +1,3 @@
-#include "mainwindow.h"
-
 #include <QApplication>
 #include <QTextCodec>
 #include <QMessageBox>
@@ -7,6 +5,7 @@
 #include <QFont>
 #include <QSystemSemaphore>
 #include <QSharedMemory>
+#include "mainwindow.h"
 #include "qlog.h"
 #include "login.h"
 #include "sqlitedata.h"
@@ -21,16 +20,34 @@ int main(int argc, char *argv[])
     font.setFamily("宋体");
     a.setFont(font);
 
-    QSystemSemaphore sema("UPLOAD", 1, QSystemSemaphore::Open);
+    QSystemSemaphore sema("KANGKANG", 1, QSystemSemaphore::Open);
     sema.acquire();
-    QSharedMemory mem("KANGKANG");
-    if(!mem.create(1))
+
+#ifdef Q_OS_LINUX
+    QSharedMemory mem("UPLOAD");
+    if (mem.attach())
     {
-        QMessageBox::information(nullptr, QObject::tr("提示"), QObject::tr("程序已经运行"), QMessageBox::Yes);
-        sema.release();
-        return 0;
+        mem.detach();
+    }
+#endif
+    QSharedMemory unimem("UPLOAD");
+    bool isRunning = false;
+    if(unimem.attach())
+    {
+        isRunning = true;
+    }
+    else
+    {
+        unimem.create(1);
+        isRunning = false;
     }
     sema.release();
+
+    if(isRunning)
+    {
+        QMessageBox::information(nullptr, QObject::tr("提示"), QObject::tr("程序已经运行"), QMessageBox::Yes);
+        exit(0);
+    }
 
     QTextCodec::setCodecForLocale(QTextCodec::codecForLocale());
     QLog::initLog();
