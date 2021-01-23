@@ -22,7 +22,7 @@ Seting* Seting::getSeting()
     Seting *seting = nullptr;
 #ifdef Q_OS_LINUX
     seting = new Seting(5, QObject::tr("/tmp/uploadCloud"));
-#elif
+#else
     seting = new Seting(5, QObject::tr("C:\\uploadCloud"));
 #endif
     QSqlQuery query(SqliteData::getDb());

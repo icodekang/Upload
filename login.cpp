@@ -84,7 +84,6 @@ void Login::on_loginBtn_clicked()
         }
 
         QByteArray repData = reply->readAll();
-        delete reply;
 
         QJsonParseError jsonError;
         QJsonDocument jsonDoc(QJsonDocument::fromJson(repData, &jsonError));

@@ -93,7 +93,7 @@ bool SqliteData::dbInit()
         query.bindValue(1, 5);
 #ifdef Q_OS_LINUX
         query.bindValue(2, "/tmp/uploadCloud");
-#elif
+#else
         query.bindValue(2, "C:/uploadCloud");
 #endif
         query.bindValue(3, Tool::getCurTime());
